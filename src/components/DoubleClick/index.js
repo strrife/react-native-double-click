@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-	StyleSheet,
 	View,
 	PanResponder,
 	Alert,
@@ -57,15 +56,9 @@ export default class DoubleClicker extends Component {
 
 	render() {
 		return (
-			<View style={styles.container} {...this.myPanResponder.panHandlers}>
+			<View {...this.myPanResponder.panHandlers}>
 				{this.props.children}
 			</View>
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-	}
-});
