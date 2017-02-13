@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import {
 	View,
 	PanResponder,
@@ -34,10 +34,9 @@ export default class DoubleClicker extends Component {
 	isDoubleTap(currentTouchTimeStamp, {x0, y0}) {
 		const { prevTouchX, prevTouchY, prevTouchTimeStamp } = this.prevTouchInfo;
 		const dt = currentTouchTimeStamp - prevTouchTimeStamp;
-		const DOUBLE_TAP_DELAY = 300; //milliseconds
-		const DOUBLE_TAP_RADIUS = 20;
+		const { delay, radius} = this.props; 
 
-		return ( dt < DOUBLE_TAP_DELAY && this.distance(prevTouchX, prevTouchY, x0, y0) < DOUBLE_TAP_RADIUS );
+		return ( dt < delay && this.distance(prevTouchX, prevTouchY, x0, y0) < radius );
 	}
 
 	handlePanResponderGrant(evt, gestureState) {
@@ -62,3 +61,13 @@ export default class DoubleClicker extends Component {
 		);
 	}
 }
+
+DoubleClicker.defaultProps = {
+	delay: 300,
+	radius: 20,
+};
+
+DoubleClicker.propTypes = {
+	delay: PropTypes.number,
+	radius: PropTypes.number,
+};
