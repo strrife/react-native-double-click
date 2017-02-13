@@ -3,15 +3,26 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Alert,
 } from 'react-native';
 import DoubleClick from './src/components/DoubleClick';
 
 export default class doubleClicker extends Component {
+  constructor() {
+    super();
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    Alert.alert('This is Awesome');
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <DoubleClick>
+        <DoubleClick onClick={this.handleClick}>
           <Text style={styles.welcome}>
             Welcome to React Native!
           </Text>
