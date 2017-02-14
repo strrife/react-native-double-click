@@ -16,22 +16,18 @@ export default class doubleClicker extends Component {
   }
 
   handleClick() {
-    Alert.alert('This is Awesome');
+    Alert.alert('This is awesome \n Double tap succeed');
   }
 
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
         <DoubleClick onClick={this.handleClick}>
-          <Text style={styles.welcome}>
-            Welcome to React Native!
-          </Text>
           <Text style={styles.instructions}>
-            To get started, edit index.android.js
-          </Text>
-          <Text style={styles.instructions}>
-            Double tap R on your keyboard to reload,{'\n'}
-            Shake or press menu button for dev menu
+            Please tap me twice!
           </Text>
         </DoubleClick>
       </View>
@@ -53,8 +49,10 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: 'white',
+    fontSize: 26,
     marginBottom: 5,
+    backgroundColor: 'gray',
   },
 });
 
