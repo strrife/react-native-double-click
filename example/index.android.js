@@ -6,7 +6,7 @@ import {
   View,
   Alert,
 } from 'react-native';
-import DoubleClick from './src/components/DoubleClick';
+import DoubleClick from 'react-native-double-click';
 
 export default class doubleClicker extends Component {
   constructor() {
