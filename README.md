@@ -2,12 +2,6 @@
 
 A Component Wrapper for Double Click/Tap, made for React Native, works on both Android and iOS.
 
-## Running Example
-* `git clone https://github.com/dwicao/react-native-double-click.git`
-* `cd example`
-* `npm install`
-* `react-native run-android`
-
 ## Installation
 * `npm install --save react-native-double-click`
 
