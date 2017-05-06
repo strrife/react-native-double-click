@@ -1,6 +1,6 @@
 {
   "name": "react-native-double-click",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Native Double Click/Tap",
   "main": "src/main.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "twice"
   ],
   "files": [
-    "dist",
+    "src",
     "README.md"
   ],
   "author": "Lutfian Dwi Cahyono <lutfiandwica@gmail.com> (https://dwicao.github.io/)",
