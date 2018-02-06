@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
 	View,
 	PanResponder,
@@ -34,8 +34,9 @@ class DoubleClicker extends Component {
 	isDoubleTap(currentTouchTimeStamp, {x0, y0}) {
 		const { prevTouchX, prevTouchY, prevTouchTimeStamp } = this.prevTouchInfo;
 		const dt = currentTouchTimeStamp - prevTouchTimeStamp;
-		const { delay, radius} = this.props; 
-
+		let { delay, radius} = this.props; 
+                delay = delay || 300;
+		radius = radius || 20;
 		return ( dt < delay && this.distance(prevTouchX, prevTouchY, x0, y0) < radius );
 	}
 
@@ -61,17 +62,5 @@ class DoubleClicker extends Component {
 		);
 	}
 }
-
-DoubleClicker.defaultProps = {
-	delay: 300,
-	radius: 20,
-	onClick: () => Alert.alert('Double Tap Succeed'),
-};
-
-DoubleClicker.propTypes = {
-	delay: PropTypes.number,
-	radius: PropTypes.number,
-	onClick: PropTypes.func,
-};
 
 module.exports = DoubleClicker;
